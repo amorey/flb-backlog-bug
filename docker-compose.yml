@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  flb-v2_0:
+    stop_grace_period: 15s
+    image: fluent/fluent-bit:2.0.11-debug
+    command: /fluent-bit/bin/fluent-bit -c /etc/fluent-bit/fluent-bit.conf
+    volumes:
+      - type: volume
+        source: flb-v2_0-data
+        target: /var/log/flb-storage
+      - type: bind
+        source: config
+        target: /etc/fluent-bit
+    networks:
+      - intranet
+
+  flb-v2_1:
+    stop_grace_period: 15s
+    image: fluent/fluent-bit:2.1.2-debug
+    command: /fluent-bit/bin/fluent-bit -c /etc/fluent-bit/fluent-bit.conf
+    volumes:
+      - type: volume
+        source: flb-v2_1-data
+        target: /var/log/flb-storage
+      - type: bind
+        source: config
+        target: /etc/fluent-bit
+    networks:
+      - intranet
+
+networks:
+  intranet:
+
+volumes:
+  flb-v2_0-data:
+  flb-v2_1-data:
