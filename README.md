@@ -73,8 +73,8 @@ Fluent Bit v2.0.11
 
 First, send a message to Fluent Bit v2.1.X using TCP (don't forget to hit `<enter>`):
 
-```sh
-docker exec -it flb-backlog-bug-flb-v2_0-1 sh
+```
+$ docker exec -it flb-backlog-bug-flb-v2_0-1 sh
 # nc localhost 5170
 hello
 
@@ -90,8 +90,8 @@ This will result in a flush failure (expected):
 
 Next, restart the docker container:
 
-```sh
-docker restart flb-backlog-bug-flb-v2_0-1
+```
+$ docker restart flb-backlog-bug-flb-v2_0-1
 ```
 
 This will add the previously failed chunk to the storage_backlog queue (expected):
@@ -105,8 +105,8 @@ This will add the previously failed chunk to the storage_backlog queue (expected
 
 First, send a message to Fluent Bit v2.1.X using TCP (don't forget to hit `<enter>`):
 
-```sh
-docker exec -it flb-backlog-bug-flb-v2_1-1 sh
+```
+$ docker exec -it flb-backlog-bug-flb-v2_1-1 sh
 # nc localhost 5170
 hello
 
@@ -123,7 +123,7 @@ This will result in a flush failure (expected):
 Next, restart the docker container:
 
 ```sh
-docker restart flb-backlog-bug-flb-v2_1-1
+$ docker restart flb-backlog-bug-flb-v2_1-1
 ```
 
 This will result in a validation failure of the previously failed chunk (unexpected):
