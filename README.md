@@ -71,7 +71,7 @@ Fluent Bit v2.0.11
 
 ## Demonstrate expected behavior in v2.0.X
 
-First, send a message to Fluent Bit v2.1.X using TCP (don't forget to hit <enter>):
+First, send a message to Fluent Bit v2.1.X using TCP (don't forget to hit `<enter>`):
 
 ```sh
 docker exec -it flb-backlog-bug-flb-v2_0-1 sh
@@ -103,7 +103,7 @@ This will add the previously failed chunk to the storage_backlog queue (expected
 
 ## Demonstrate unexpected behavior in v2.1.X
 
-First, send a message to Fluent Bit v2.1.X using TCP (don't forget to hit <enter>):
+First, send a message to Fluent Bit v2.1.X using TCP (don't forget to hit `<enter>`):
 
 ```sh
 docker exec -it flb-backlog-bug-flb-v2_1-1 sh
